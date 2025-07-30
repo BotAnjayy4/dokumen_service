@@ -1,0 +1,17 @@
+<h2>Riwayat Servis Motor</h2>
+<input id="kodeMotor" placeholder="Masukkan kode motor">
+<button onclick="cari()">Cari</button>
+<div id="hasilCari"></div>
+<script>
+  function cari() {
+    const kode = document.getElementById('kodeMotor').value;
+    const hasil = document.getElementById('hasilCari');
+    if (dataServis[kode]) {
+      const d = dataServis[kode];
+      hasil.innerHTML = `Tanggal: ${d.tanggal}<br>Kerusakan: ${d.kerusakan}<br>Biaya: Rp${d.biaya}<br>Mekanik: ${d.mekanik}`;
+    } else {
+      hasil.innerText = 'Data tidak ditemukan.';
+    }
+  }
+</script>
+<script src="../js/data.js"></script>

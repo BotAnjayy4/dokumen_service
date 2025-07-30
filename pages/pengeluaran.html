@@ -1,0 +1,11 @@
+<h2>Pengeluaran Bulanan</h2>
+<ul id="listPengeluaran"></ul>
+<script>
+  const list = document.getElementById('listPengeluaran');
+  pengeluaranBulanan.forEach(p => {
+    const item = document.createElement('li');
+    item.textContent = `${p.bulan}: Rp${p.biaya}`;
+    list.appendChild(item);
+  });
+</script>
+<script src="../js/data.js"></script>
