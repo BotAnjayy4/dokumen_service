@@ -2,19 +2,47 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Bengkel SMK 2 Takeran</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buku Servis Digital</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="welcome fade">Welcome to Bengkel SMK 2 Takeran</div>
-  <div class="menu fade" id="menu-container">
-    <button onclick="loadPage('pages/riwayat.html')">Riwayat Servis</button>
-    <button onclick="loadPage('pages/pengeluaran.html')">Pengeluaran</button>
-    <button onclick="loadPage('pages/bengkel.html')">Tentang Bengkel</button>
-    <button onclick="loadPage('pages/pembuat.html')">Tentang Pembuat</button>
-  </div>
-  <div id="page-content" class="fade"></div>
-  <script src="js/main.js"></script>
+  <header>
+    <h1>Buku Servis Kendaraan Digital</h1>
+    <p>Berbasis QR Code</p>
+  </header>
+
+  <main>
+    <section class="qr-section">
+      <h2>Scan QR Kendaraan</h2>
+      <img src="assets/qr-placeholder.png" alt="Contoh QR" />
+      <button onclick="showServiceForm()">Tambah Servis</button>
+    </section>
+
+    <section id="form-section" class="hidden">
+      <h2>Form Tambah Servis</h2>
+      <form id="serviceForm">
+        <input type="text" placeholder="Nama Pemilik" required />
+        <input type="text" placeholder="Jenis Kendaraan" required />
+        <input type="date" required />
+        <input type="text" placeholder="Jenis Servis" required />
+        <textarea placeholder="Catatan Tambahan..."></textarea>
+        <button type="submit">Simpan Data</button>
+      </form>
+    </section>
+
+    <section id="data-section">
+      <h2>Riwayat Servis</h2>
+      <ul id="serviceList">
+        <!-- Data akan ditambahkan via JavaScript -->
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Buku Servis Digital QR - InzieOfc</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
